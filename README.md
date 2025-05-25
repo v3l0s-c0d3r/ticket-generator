@@ -21,25 +21,30 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-I created an accordion of sample Frequently Asked Questions (FAQs) using simple JS DOM manipulation as a solution to a Frontend Mentor challenge and a project submission for a tech training program I participated in.
+This project is basically a conference ticket generator with basic functionality. A Frontend Mentor challenge solution, but much more advanced. (Didn't use React, lol)
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - HTML5
 - CSS3
 - Vanilla JS
+- GitHub API (for user validation)
 
 ## <a name="features">🔋 Features</a>
 
-👉 **Interactive FAQ Accordion**: A user-friendly accordion that toggles answers to FAQs with a simple click, enhancing content accessibility.  
+👉 **Drag & Drop Avatar Upload**: Upload your photo via drag-and-drop or click-to-browse.
 
-👉 **Smooth Animations with CSS Transitions**: Elegant transitions for opening and closing accordion items, providing a polished user experience.  
+👉 **GitHub Username Verification**: Automatically checks if the GitHub handle you enter actually exists via the GitHub API.
 
-👉 **Dynamic Icon Toggle**: Icons switch between `+` and `-` symbols to visually indicate the expanded or collapsed state of each FAQ item.  
+👉 **Auto-generated Registration Number**: Every ticket gets a unique, randomized registration number.
 
-👉 **Hover Effects**: Subtle color changes on FAQ questions when hovered, improving interactivity and user feedback.  
+👉 **Real-time Input Validation**: Validates email and GitHub input with clear error messages and styling feedback.
 
-👉 **Fully Responsive Design**: Adapts seamlessly to all screen sizes, from mobile to desktop, ensuring usability across devices.
+👉 **Responsive Design**: Fully optimized across all device sizes — from smartphones to ultra-wide monitors.
+
+👉 **Personalized Ticket Display**: On successful submission, get a custom-designed conference ticket preview showing all your info.
+
+👉 **Sleek, Accessible UI**: Designed with accessibility and UX best practices in mind.
 
 ## <a name="follow-me">🫱🏽‍🫲🏼 Let's Connect</a>
 **Hey there! Interested in working with me?** 
