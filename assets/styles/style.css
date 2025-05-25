@@ -1,0 +1,709 @@
+/* ===== BASE STYLES (MOBILE FIRST) ===== */
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('/assets/fonts/Inconsolata-VariableFont.ttf');
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}  
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background:
+        url('../images/pattern-lines.svg') top / contain no-repeat,
+        url('../images/pattern-squiggly-line-top.svg') top -20px right / 200px 200px no-repeat,
+        url('../images/pattern-squiggly-line-bottom.svg') left top 65dvh / 300px 300px no-repeat,
+        url('../images/pattern-circle.svg') left 5% top 10px / 80px 80px no-repeat,
+        url('../images/pattern-circle.svg') right 25% center / 80px 80px no-repeat,
+        url('../images/background-mobile.png') center / cover no-repeat;
+    background-attachment: fixed;
+    font-family: 'Inconsolata';
+    color: hsl(0, 0%, 100%);
+    padding: 10px;
+}
+
+/* ===== COMPONENT STYLES ===== */
+.logo {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    height: 20px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    width: 100%;
+    font-weight: 600;
+    font-size: 22.5px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+
+    & span {
+        font-weight: 700;
+        background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+h2 {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    color: hsl(252, 6%, 83%);
+    line-height: 1.4;
+
+    & span {
+        color: hsl(7, 88%, 67%);
+    }
+}
+
+h3 {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.section {
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.display-msg,
+.error-msg {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 11px;
+    font-style: normal;
+
+    & svg {
+        margin-right: 5px;
+    }
+}
+
+/* ===== FORM STYLES ===== */
+.form-content {
+    padding: 15px 0;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 15px;
+}
+
+.upload-image, 
+.upload-info {
+    margin-bottom: 20px;
+}
+
+.error-msg {
+    color: hsl(7, 71%, 60%);
+}
+
+.upload-div label:focus,
+.upload-div label:hover {
+    background-color: hsl(245, 19%, 35%, 0.5);
+}
+
+.upload-div label,
+.upload-info input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    background: hsl(245, 19%, 35%, 0.3);
+    color: hsl(252, 6%, 83%);
+    font-family: 'Inconsolata';
+    font-size: 14px;
+}
+
+.upload-div label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    border: 1px dashed hsl(245, 15%, 58%);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    & p {
+        margin: 0;
+        font-size: 14px;
+    }
+}
+
+.upload-div .icon {
+    padding: 5px;
+    border: 1px solid hsl(245, 15%, 58%);
+    border-radius: 5px;
+    background: hsl(245, 19%, 35%);
+    margin-bottom: 8px;
+}
+
+.img-action {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.img-action input {
+    border: none;
+    border-radius: 5px;
+    background: hsla(245, 19%, 35%, 0.5);
+    color: hsl(252, 6%, 83%);
+    font-family: 'Inconsolata';
+    font-size: 11px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+.upload-info input {
+    border: 1.5px solid hsl(245, 15%, 58%);
+    outline: none;
+}
+
+.upload-info input.error {
+    border-color: hsl(7, 71%, 60%);
+}
+
+.ticket-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: hsl(7, 88%, 67%);
+    font-family: 'Inconsolata';
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    color: hsl(248, 70%, 10%);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ticket-btn:hover {
+    background-color: hsl(7, 71%, 60%);
+    box-shadow: inset 0 -3px 0 hsl(7, 88%, 67%);
+}
+
+/* ===== TICKET STYLES ===== */
+.ticket-content {
+    position: relative;
+    display: flex;
+    background: url('../images/pattern-ticket.svg') center/contain no-repeat;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.ticket-heading h2 {
+    width: 300px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: fit-content;
+    padding: 15px 0;
+    justify-content: space-evenly;
+}
+
+.details {
+    display: flex;
+}
+
+.details .info {
+    display: flex;
+    flex-direction: column;
+
+    & span {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+
+        & img {
+            height: 20px;
+        }
+    }
+}
+
+.event {
+    height: 30px;
+
+    & img {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    & .info {
+        justify-content: space-between;
+
+        & p {
+            margin-top: -7px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+}
+
+.attendee img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 7px;
+}
+
+.attendee .info {
+    justify-content: center;
+
+    & p {
+        font-size: 15px;
+    }
+
+    & span {
+        & img {       
+            margin-right: 3px;
+        }
+    }
+}
+
+.attendee .info p {
+    margin-bottom: 5px;
+}
+
+.reg-number {
+    display: flex;
+    width: 47px;
+    align-items: center;
+    font-size: 20px;
+    color: hsl(245, 15%, 58%);
+
+    & span {
+        rotate: 90deg;
+    }
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (min-width: 375px) {
+    .ticket-heading h2 {
+        width: 330px;
+    }
+
+    .details .info {
+        & span {
+            font-size: 13px;
+        }
+    }
+
+    .event {
+        height: 40px;
+
+        & .info {
+            & p {
+                margin-top: -7px;
+                font-size: 22px;
+            }
+        }
+    }
+
+    .attendee {
+        margin-top: 12px;
+    }
+
+    .attendee img {
+        height: 60px;
+        margin-right: 12px;
+    }
+
+    .attendee .info {
+        & p {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+    }
+
+    .reg-number {
+        display: flex;
+        width: 47px;
+        align-items: center;
+        font-size: 20px;
+        color: hsl(245, 15%, 58%);
+
+        & span {
+            rotate: 90deg;
+        }
+    }
+}
+
+@media (min-width: 425px) {
+    body {
+        background:
+            url('../images/pattern-lines.svg') top / contain no-repeat,
+            url('../images/pattern-squiggly-line-top.svg') top right / 200px 200px no-repeat,
+            url('../images/pattern-squiggly-line-bottom.svg') left top 57dvh / 350px 350px no-repeat,
+            url('../images/pattern-circle.svg') left 5% top -35px / 100px 100px no-repeat,
+            url('../images/pattern-circle.svg') right 20% center / 100px 100px no-repeat,
+            url('../images/background-mobile.png') center / cover no-repeat;
+        background-attachment: fixed;
+    }
+    .main {
+        margin-top: 5px;
+        padding: 15px 0;
+        justify-content: space-between;
+    }
+
+    .reg-number {
+        width: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        background:
+            url('../images/pattern-lines.svg') top / contain no-repeat,
+            url('../images/pattern-squiggly-line-top.svg') top -70px right / 250px 250px no-repeat,
+            url('../images/pattern-squiggly-line-bottom.svg') left top 40dvh / 500px 500px no-repeat,
+            url('../images/pattern-circle.svg') left 5% top -35px / 100px 100px no-repeat,
+            url('../images/pattern-circle.svg') right 25% center / 100px 100px no-repeat,
+            url('../images/background-tablet.png') center / cover no-repeat;
+        background-attachment: fixed;
+    }
+
+    .heading {
+        width: 450px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 30px;
+    }
+
+    .ticket-heading h2 {
+        width: 370px;
+    }
+
+    .ticket-content {
+        max-width: 500px;
+        height: 230px;
+
+        & .main {
+            width: 350px;
+            padding: 15px;
+            justify-content: space-between;
+
+            & .event {   
+                height: 55px;
+
+                & img {
+                    height: 30px;
+                    margin-right: 12px;
+                }
+
+                & .info {
+                    & p {
+                        font-size: 30px;
+                    }
+                }
+            }
+
+            & .attendee {
+                & .info {
+                    & p {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .details .info {
+        display: flex;
+        flex-direction: column;
+
+        & span {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+            & img {
+                height: 25px;
+            }
+        }
+    }
+
+    .event {
+        & .info {
+            justify-content: space-between;
+
+            & p {
+                margin-top: -7px;
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .reg-number {
+        width: 75px;
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background:
+            url('../images/pattern-lines.svg') top / contain no-repeat,
+            url('../images/pattern-squiggly-line-top.svg') top -70px right / 330px 330px no-repeat,
+            url('../images/pattern-squiggly-line-bottom.svg') left top 35dvh / 600px 600px no-repeat,
+            url('../images/pattern-circle.svg') left 5% top -35px / 130px 130px no-repeat,
+            url('../images/pattern-circle.svg') right 25% center / 130px 130px no-repeat,
+            url('../images/background-desktop.png') center / cover no-repeat;
+        background-attachment: fixed;
+    }
+
+    .heading {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 40px;
+        max-width: 600px;
+    }
+
+    .display-msg,
+    .error-msg {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 2560px) {
+    body {
+        background:
+            url('../images/pattern-lines.svg') top / contain no-repeat,
+            url('../images/pattern-squiggly-line-top.svg') top -70px right / 700px 700px no-repeat,
+            url('../images/pattern-squiggly-line-bottom.svg') left top 40dvh / 1000px 1000px no-repeat,
+            url('../images/pattern-circle.svg') left 5% top -35px / 250px 250px no-repeat,
+            url('../images/pattern-circle.svg') right 25% center / 250px 250px no-repeat,
+            url('../images/background-desktop.png') center / cover no-repeat;
+        background-attachment: fixed;
+    }
+
+    .section {
+        max-width: 50vw;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 4.5em;
+        max-width: fit-content;
+    }
+
+    h2 {
+        font-size: 1.7em;
+        margin-top: 20px;
+    }
+
+    h3 {
+        font-size: 1.7em;
+        margin-bottom: 1em;
+    }
+
+    .logo img {
+        height: 2.5em;
+        margin-bottom: 1.7em;
+    }
+
+    .form-content {
+        max-width: 25vw;
+        padding: 30px 0;
+    }
+
+    .upload-image {
+        margin-bottom: 2em;
+    }
+
+    .upload-info {
+        margin-bottom: 2.25em;
+    }
+
+    .upload-div label,
+    .upload-info input {
+        padding: 20px;
+        font-size: 2em;
+    }
+
+    .upload-div {
+        & label {
+            height: 220px;
+            border: .125em dashed hsl(245, 15%, 58%);
+
+            & p {
+                font-size: .9em;
+            }
+
+            & .icon {
+                height: 80px;
+                padding: 10px;
+                margin-bottom: .8em;
+            }
+        }
+    }
+
+    .avatar.preview {
+        height: 110px;
+        width: 80px;
+        margin-bottom: .4em;
+    }
+
+    #changeImage,
+    #removeImage {
+        font-size: .8em;
+        padding: 12px;
+        margin: 0 7px;
+    }
+
+    .display-msg,
+    .error-msg {
+        font-size: 1.4em;
+        margin-top: 1em;
+
+        & svg {
+            height: 20px;
+            width: 20px;
+            margin-right: .5em;
+        }
+    }
+
+    .ticket-btn {
+        margin: 1.75em 0;
+        padding: 20px;
+        font-size: 2em;
+    }
+
+    .ticket-heading h2 {
+        margin-top: 2em;
+        width: 765px;
+    }
+
+    .ticket-content {
+        max-width: 1200px;
+        height: 680px;
+
+        & .main {
+            width: fit-content;
+            padding: 2em;
+            justify-content: space-evenly;
+
+            & .event {   
+                height: 7em;
+
+                & img {
+                    height: 3.5em;
+                    margin-right: 1.5em;
+                }
+
+                & .info {
+                    & p {
+                        font-size: 4em;
+                    }
+                }
+            }
+
+            & .attendee {
+                & img {
+                    border-radius: 1em;
+                }
+
+                & .info {
+                    & p {
+                        font-size: 3em;
+                        margin-bottom: .5em;
+                    }
+
+                    & span {
+                        & img {
+                            height: 45px;
+                        }
+                    }
+                }
+
+                & .avatar {
+                    height: 10em;
+                    margin-right: 2em;
+                }
+            }
+        }
+    }
+
+    .details .info {
+        display: flex;
+        flex-direction: column;
+
+        & span {
+            display: flex;
+            align-items: center;
+            font-size: 2em;
+        }
+    }
+
+    .event {
+        & .info {
+            justify-content: space-between;
+
+            & p {
+                margin-top: -.25em;
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .reg-number {
+        width: 188px;
+        font-size: 3.5em;
+    }
+}
