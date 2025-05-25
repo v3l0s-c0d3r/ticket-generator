@@ -1,7 +1,7 @@
 /* ===== BASE STYLES (MOBILE FIRST) ===== */
 @font-face {
     font-family: 'Inconsolata';
-    src: url('/assets/fonts/Inconsolata-VariableFont.ttf');
+    src: url('../fonts/Inconsolata-VariableFont.ttf');
 }
 
 * {
